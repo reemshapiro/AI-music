@@ -11,7 +11,11 @@ import {
 export default function App() {
 
   const [counter, setCounter] = useState(1);
-
+  useEffect(() => {
+    fetch("/test")
+    .then(r=>r.json())
+    .then(r=>console.log(r))
+  }, [])
   return (
     <Router>
       <div>
